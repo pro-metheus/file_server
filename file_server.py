@@ -7,6 +7,8 @@ from threading import Thread
 from pickle import dumps, loads
 import os
 
+SERVER_ROOT = '' #ENTER SERVER ROOT PATH HERE
+
 
 def file_server_hanlder(client):
     '''
@@ -17,7 +19,7 @@ def file_server_hanlder(client):
     found = 0
     for content in contents:
         if file_name == content:
-            f = open(settings.SERVER_ROOT+'/'+file_name, 'rb')
+            f = open(SERVER_ROOT+'/'+file_name, 'rb')
             file_content = f.read()
             package = []
             package[0] = 200
